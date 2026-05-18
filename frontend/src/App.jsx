@@ -9,7 +9,7 @@ import Directory from './components/Directory';
 import Support from './components/Support';
 import './index.css';
 
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 function App() {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));
