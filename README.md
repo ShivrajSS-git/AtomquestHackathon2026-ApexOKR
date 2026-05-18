@@ -20,7 +20,7 @@
 ## 2. Source Code Repository
 *Please replace the placeholder below with the link to your public Git repository.*
 
-💻 **Repository:** `[Insert GitHub/GitLab Repo Link Here]`
+💻 **Repository:** `https://github.com/ShivrajSS-git/AtomquestHackathon2026-ApexOKR/tree/main`
 
 ---
 
