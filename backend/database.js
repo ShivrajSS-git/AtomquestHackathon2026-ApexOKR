@@ -59,9 +59,9 @@ async function setupDb() {
     // Seed some data if empty
     const userCount = await db.get('SELECT COUNT(*) as count FROM users');
     if (userCount.count === 0) {
-        await db.run('INSERT INTO users (name, email, role) VALUES (?, ?, ?)', ['Admin User', 'admin@atomquest.com', 'Admin']);
-        const manager = await db.run('INSERT INTO users (name, email, role) VALUES (?, ?, ?)', ['Manager User', 'manager@atomquest.com', 'Manager']);
-        await db.run('INSERT INTO users (name, email, role, manager_id) VALUES (?, ?, ?, ?)', ['Employee User', 'employee@atomquest.com', 'Employee', manager.lastID]);
+        await db.run('INSERT INTO users (name, email, role) VALUES (?, ?, ?)', ['Admin User', 'admin@apexokr.com', 'Admin']);
+        const manager = await db.run('INSERT INTO users (name, email, role) VALUES (?, ?, ?)', ['Manager User', 'manager@apexokr.com', 'Manager']);
+        await db.run('INSERT INTO users (name, email, role, manager_id) VALUES (?, ?, ?, ?)', ['Employee User', 'employee@apexokr.com', 'Employee', manager.lastID]);
     }
 
     return db;
