@@ -1,84 +1,95 @@
-# Hackathon Submission: ApexOKR Portal
+# ApexOKR: Enterprise Goal Setting & Tracking Portal
 
-**Project Name:** ApexOKR - Enterprise Goal Setting & Tracking Portal  
-**Track/Problem Statement:** Professional Goal Tracking Phase 1 & 2  
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)](https://vitejs.dev/)
+[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+[![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
 
----
+**ApexOKR** is a full-stack, professional-grade platform designed to align personal ambition with organizational growth. Built for the AtomQuest Hackathon, this portal facilitates transparent OKR (Objectives and Key Results) setting, quarterly performance tracking, and continuous managerial feedback.
 
-## 1. Working Link
-*Please replace the placeholder below with your live deployed URL (e.g., Vercel, Render, or Netlify)*
+![ApexOKR Demo](https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80) <!-- Placeholder image, replace if needed -->
 
-🔗 **Live Portal:** `[Insert Live Deployed Link Here, e.g., https://apexokr.vercel.app]`
+## 🚀 Live Demo
 
-**Demo Credentials:**
-- Employee: `employee@apexokr.com`
-- Manager: `manager@apexokr.com`
-- Admin: `admin@apexokr.com`
+- **Frontend Application:** [Deployed on Vercel](#) *(Insert Vercel Link)*
+- **Backend API:** [Deployed on Render](#) *(Insert Render Link)*
 
----
-
-## 2. Source Code Repository
-*Please replace the placeholder below with the link to your public Git repository.*
-
-💻 **Repository:** `https://github.com/ShivrajSS-git/AtomquestHackathon2026-ApexOKR/tree/main`
+### Demo Credentials:
+- **Employee Portal:** `employee@apexokr.com`
+- **Manager Portal:** `manager@apexokr.com`
+- **Admin Console:** `admin@apexokr.com`
 
 ---
 
-## 3. Architecture Diagram
-The following diagram outlines the high-level architecture of the ApexOKR application, illustrating the flow of data between the client, the API layer, and the database.
+## 🌟 Key Features
 
-```mermaid
-graph TD
-    %% Define Styles
-    classDef frontend fill:#2563eb,stroke:#1d4ed8,stroke-width:2px,color:#fff;
-    classDef backend fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff;
-    classDef db fill:#f59e0b,stroke:#d97706,stroke-width:2px,color:#fff;
-    classDef user fill:#64748b,stroke:#475569,stroke-width:2px,color:#fff;
+### Phase 1: Planning & Approvals
+- **Employee Drafts:** Employees can define up to 8 goals across strategic Thrust Areas (Sales, Operations, Innovation, etc.).
+- **Strict Validation:** Total weightage is strictly validated to equal 100%.
+- **Manager Review:** Managers can review team submissions, execute inline edits, and definitively Approve or Return goals for rework.
 
-    %% Actors
-    Employee([Employee User]):::user
-    Manager([Manager User]):::user
-    Admin([Admin User]):::user
+### Phase 2: Execution & Tracking
+- **Quarterly Check-ins:** Employees log their actual achievements against their predefined targets.
+- **Continuous Feedback:** Managers provide documented feedback on quarterly progress.
+- **Audit Logging:** Admins have access to a complete, timestamped history of all goal modifications and approvals.
 
-    %% Frontend App
-    subgraph Frontend [React Frontend - Vite]
-        UI[User Interface & Routing]:::frontend
-        State[State Management]:::frontend
-        AuthClient[Auth & Session]:::frontend
-        
-        UI <--> State
-        State <--> AuthClient
-    end
+### Enterprise Governance
+- **Dynamic Scheduling:** Admins can visually configure the exact start dates for Goal Setting phases and Quarterly Review windows.
+- **Data Export:** 1-click generation of comprehensive CSV achievement reports.
+- **Dark/Light Mode:** A fully custom, glassmorphic design system supporting both Sapphire Light and True Dark themes.
 
-    %% Backend API
-    subgraph Backend [Node.js & Express API]
-        Router[API Router]:::backend
-        AuthService[Authentication Service]:::backend
-        GoalService[Goal Management Service]:::backend
-        ReportService[Reporting Service]:::backend
-        
-        Router --> AuthService
-        Router --> GoalService
-        Router --> ReportService
-    end
+---
 
-    %% Database
-    subgraph Database [Data Layer]
-        SQLite[(SQLite Database)]:::db
-    end
+## 🛠️ Architecture & Tech Stack
 
-    %% Connections
-    Employee -->|Submit Goals & Track Check-ins| UI
-    Manager -->|Review & Approve Goals| UI
-    Admin -->|System Config & Audit Export| UI
+### Frontend
+- **Framework:** React 18 + Vite (for lightning-fast HMR)
+- **Styling:** Custom Vanilla CSS with dynamic CSS Variables for theming (No bloated CSS frameworks).
+- **Icons:** `lucide-react` for crisp, professional iconography.
+- **State Management:** React Hooks (`useState`, `useEffect`) propagating via Context/Props.
 
-    AuthClient <-->|REST / JSON| Router
-    AuthService <--> SQLite
-    GoalService <--> SQLite
-    ReportService <--> SQLite
-```
+### Backend
+- **Server:** Node.js + Express.js
+- **Database:** SQLite3 (Serverless, ultra-fast local database ideal for hackathon demonstrations).
+- **API:** RESTful endpoints for Auth, Goal CRUD, and Reporting.
 
-### Architecture Overview:
-1. **Frontend (React.js + Vite):** A responsive, single-page application utilizing pure functional components and a custom dynamic CSS variable design system (Sapphire Light & Dark mode).
-2. **Backend (Node.js + Express):** A lightweight RESTful API handling authentication, CRUD operations for goals/achievements, and role-based access control.
-3. **Database (SQLite):** A fast, file-based relational database ensuring persistence of users, Phase 1 goal metrics, and Phase 2 quarterly achievements.
+---
+
+## 💻 Local Development
+
+Follow these steps to run the ApexOKR portal locally on your machine.
+
+### Prerequisites
+- Node.js (v20.x recommended)
+- Git
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/YourUsername/AtomquestHackathon2026-ApexOKR.git
+   cd AtomquestHackathon2026-ApexOKR
+   ```
+
+2. **Start the Backend Server**
+   ```bash
+   cd backend
+   npm install
+   node server.js
+   ```
+   *The backend will automatically create a `database.sqlite` file and seed it with the demo users. It runs on `http://localhost:5000`.*
+
+3. **Start the Frontend UI**
+   Open a new terminal window:
+   ```bash
+   cd frontend
+   npm install
+   npm run dev
+   ```
+   *The frontend will be accessible at `http://localhost:5173`. By default, it communicates with the local backend.*
+
+---
+
+## 📝 License & Hackathon Details
+This project was developed exclusively for the **AtomQuest Hackathon 2026**. 
+All source code is provided under the MIT License.
